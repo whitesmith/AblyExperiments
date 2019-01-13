@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A43C18C2D042779AF9F5AA69 /* Pods_AblyPushSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84D9EEF7CF701FB1A0B237B /* Pods_AblyPushSwift.framework */; };
+		D717FAAC2164CA70008E9A04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717FAAB2164CA70008E9A04 /* AppDelegate.swift */; };
+		D717FAAE2164CA70008E9A04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717FAAD2164CA70008E9A04 /* ViewController.swift */; };
+		D717FAB12164CA70008E9A04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D717FAAF2164CA70008E9A04 /* Main.storyboard */; };
+		D717FAB32164CA72008E9A04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D717FAB22164CA72008E9A04 /* Assets.xcassets */; };
+		D717FAB62164CA72008E9A04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D717FAB42164CA72008E9A04 /* LaunchScreen.storyboard */; };
+		D7187E1E21CD323A005927CC /* AnotherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7187E1D21CD323A005927CC /* AnotherViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7DDEE65DA2F5F54BA7295567 /* Pods-AblyPushSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AblyPushSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-AblyPushSwift/Pods-AblyPushSwift.release.xcconfig"; sourceTree = "<group>"; };
+		D717FAA82164CA70008E9A04 /* AblyPushSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AblyPushSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D717FAAB2164CA70008E9A04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D717FAAD2164CA70008E9A04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D717FAB02164CA70008E9A04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D717FAB22164CA72008E9A04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D717FAB52164CA72008E9A04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D717FAB72164CA72008E9A04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7187E1B21CD3239005927CC /* AblyPushSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AblyPushSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		D7187E1C21CD323A005927CC /* AnotherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnotherViewController.h; sourceTree = "<group>"; };
+		D7187E1D21CD323A005927CC /* AnotherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnotherViewController.m; sourceTree = "<group>"; };
+		D7A0B7B021C2B274007253D9 /* AblyPushSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AblyPushSwift.entitlements; sourceTree = "<group>"; };
+		DBC2812849C841BE4708039A /* Pods-AblyPushSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AblyPushSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AblyPushSwift/Pods-AblyPushSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		E84D9EEF7CF701FB1A0B237B /* Pods_AblyPushSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AblyPushSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D717FAA52164CA70008E9A04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A43C18C2D042779AF9F5AA69 /* Pods_AblyPushSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D717FA9F2164CA70008E9A04 = {
+			isa = PBXGroup;
+			children = (
+				D717FAAA2164CA70008E9A04 /* AblyPushSwift */,
+				D717FAA92164CA70008E9A04 /* Products */,
+				DAC144A3A00FBB698A7F8419 /* Pods */,
+				D7ADA8C430947364E37B6889 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D717FAA92164CA70008E9A04 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D717FAA82164CA70008E9A04 /* AblyPushSwift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D717FAAA2164CA70008E9A04 /* AblyPushSwift */ = {
+			isa = PBXGroup;
+			children = (
+				D7A0B7B021C2B274007253D9 /* AblyPushSwift.entitlements */,
+				D717FAAB2164CA70008E9A04 /* AppDelegate.swift */,
+				D717FAAD2164CA70008E9A04 /* ViewController.swift */,
+				D7187E1C21CD323A005927CC /* AnotherViewController.h */,
+				D7187E1D21CD323A005927CC /* AnotherViewController.m */,
+				D717FAAF2164CA70008E9A04 /* Main.storyboard */,
+				D717FAB22164CA72008E9A04 /* Assets.xcassets */,
+				D717FAB42164CA72008E9A04 /* LaunchScreen.storyboard */,
+				D717FAB72164CA72008E9A04 /* Info.plist */,
+				D7187E1B21CD3239005927CC /* AblyPushSwift-Bridging-Header.h */,
+			);
+			path = AblyPushSwift;
+			sourceTree = "<group>";
+		};
+		D7ADA8C430947364E37B6889 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E84D9EEF7CF701FB1A0B237B /* Pods_AblyPushSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DAC144A3A00FBB698A7F8419 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DBC2812849C841BE4708039A /* Pods-AblyPushSwift.debug.xcconfig */,
+				7DDEE65DA2F5F54BA7295567 /* Pods-AblyPushSwift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D717FAA72164CA70008E9A04 /* AblyPushSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D717FABA2164CA72008E9A04 /* Build configuration list for PBXNativeTarget "AblyPushSwift" */;
+			buildPhases = (
+				DCA44AFF666A17F92B2C87AB /* [CP] Check Pods Manifest.lock */,
+				D717FAA42164CA70008E9A04 /* Sources */,
+				D717FAA52164CA70008E9A04 /* Frameworks */,
+				D717FAA62164CA70008E9A04 /* Resources */,
+				888B6B6993FD6821BFEE2E41 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AblyPushSwift;
+			productName = AblyPushSwift;
+			productReference = D717FAA82164CA70008E9A04 /* AblyPushSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D717FAA02164CA70008E9A04 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = Whitesmith;
+				TargetAttributes = {
+					D717FAA72164CA70008E9A04 = {
+						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = D717FAA32164CA70008E9A04 /* Build configuration list for PBXProject "AblyPushSwift" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D717FA9F2164CA70008E9A04;
+			productRefGroup = D717FAA92164CA70008E9A04 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D717FAA72164CA70008E9A04 /* AblyPushSwift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D717FAA62164CA70008E9A04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D717FAB62164CA72008E9A04 /* LaunchScreen.storyboard in Resources */,
+				D717FAB32164CA72008E9A04 /* Assets.xcassets in Resources */,
+				D717FAB12164CA70008E9A04 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		888B6B6993FD6821BFEE2E41 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AblyPushSwift/Pods-AblyPushSwift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Ably/Ably.framework",
+				"${BUILT_PRODUCTS_DIR}/KSCrashAblyFork/KSCrashAblyFork.framework",
+				"${BUILT_PRODUCTS_DIR}/MsgPackAblyFork/MsgPackAblyFork.framework",
+				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/SocketRocketAblyFork/SocketRocketAblyFork.framework",
+				"${BUILT_PRODUCTS_DIR}/ULID/ULID.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ably.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KSCrashAblyFork.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MsgPackAblyFork.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocketAblyFork.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ULID.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AblyPushSwift/Pods-AblyPushSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCA44AFF666A17F92B2C87AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AblyPushSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D717FAA42164CA70008E9A04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D717FAAE2164CA70008E9A04 /* ViewController.swift in Sources */,
+				D7187E1E21CD323A005927CC /* AnotherViewController.m in Sources */,
+				D717FAAC2164CA70008E9A04 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D717FAAF2164CA70008E9A04 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D717FAB02164CA70008E9A04 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D717FAB42164CA72008E9A04 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D717FAB52164CA72008E9A04 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D717FAB82164CA72008E9A04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D717FAB92164CA72008E9A04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D717FABB2164CA72008E9A04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBC2812849C841BE4708039A /* Pods-AblyPushSwift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AblyPushSwift/AblyPushSwift.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2E58BZR8M3;
+				INFOPLIST_FILE = AblyPushSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.whitesmith.AblyPush;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AblyPushSwift/AblyPushSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D717FABC2164CA72008E9A04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DDEE65DA2F5F54BA7295567 /* Pods-AblyPushSwift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AblyPushSwift/AblyPushSwift.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2E58BZR8M3;
+				INFOPLIST_FILE = AblyPushSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.whitesmith.AblyPush;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AblyPushSwift/AblyPushSwift-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D717FAA32164CA70008E9A04 /* Build configuration list for PBXProject "AblyPushSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D717FAB82164CA72008E9A04 /* Debug */,
+				D717FAB92164CA72008E9A04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D717FABA2164CA72008E9A04 /* Build configuration list for PBXNativeTarget "AblyPushSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D717FABB2164CA72008E9A04 /* Debug */,
+				D717FABC2164CA72008E9A04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D717FAA02164CA70008E9A04 /* Project object */;
+}
