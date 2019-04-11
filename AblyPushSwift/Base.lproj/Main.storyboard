@@ -18,20 +18,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vm5-fF-63U">
-                                <rect key="frame" x="164" y="64" width="46" height="30"/>
+                                <rect key="frame" x="128" y="64" width="119" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Send Notification"/>
                                 <connections>
-                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k1g-oR-SI5"/>
+                                    <action selector="sendNotificationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k1g-oR-SI5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vgn-ez-j7E">
+                                <rect key="frame" x="131" y="111" width="113" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Subscribe Client"/>
+                                <connections>
+                                    <action selector="subscribeClientButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y9Z-6K-cNL"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Ably Push Example:" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1g-Jx-Zp6">
+                                <rect key="frame" x="0.0" y="455" width="375" height="212"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="212" id="eMu-YX-sVC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rO2-M9-loI">
+                                <rect key="frame" x="127" y="149" width="120" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Subscribe Device"/>
+                                <connections>
+                                    <action selector="subscribeDeviceButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WBh-H7-Wye"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="L1g-Jx-Zp6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5Yn-Wl-MMa"/>
+                            <constraint firstItem="L1g-Jx-Zp6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WPw-bG-T0P"/>
+                            <constraint firstItem="L1g-Jx-Zp6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="zsU-Vv-HR3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="L1g-Jx-Zp6" id="0ho-Tf-Mj6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="100.29985007496252"/>
         </scene>
     </scenes>
 </document>

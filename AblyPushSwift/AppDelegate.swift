@@ -16,9 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate
     var window: UIWindow?
     var realtime: ARTRealtime!
 
+    static let AblyKey = "<key>"
+    static let AblySandbox = false
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let options = ARTClientOptions(key: "EyOMzQ._NdWJA:rb6YHb1h7YZuu45X")
+        let options = ARTClientOptions(key: AppDelegate.AblyKey)
         options.clientId = UIDevice.current.identifierForVendor!.uuidString
+        if AppDelegate.AblySandbox {
+            options.environment = "sandbox"
+        }
 
         realtime = ARTRealtime(options: options)
 
@@ -27,11 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate
         requestPushNotificationPermissions()
 
         realtime.push.activate()
-
-        // You can only use device after device activation has finished
-        realtime.channels.get("groups").push.subscribeClient() { error in
-            print("subscribeClient", error ?? "nil")
-        }
 
         return true
     }
@@ -48,15 +49,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate
         print("Ably Push Activation:", error ?? "no error")
 
         if error == nil {
-//            // You can only use device after device activation has finished
-//            realtime.channels.get("groups").push.subscribeDevice() { error in
-//                print("SubscribeDevice", error ?? "nil")
-//            }
+            // You can only use device after device activation has finished
+            //realtime.channels.get("groups").push.subscribeDevice() { error in
+            //    print("SubscribeDevice", error ?? "nil")
+            //}
+
+            // You can only use device after device activation has finished
+            //realtime.channels.get("groups").push.subscribeClient() { error in
+            //    print("Activated SubscribeClient", error ?? "nil")
+            //}
         }
     }
 
     func didDeactivateAblyPush(_ error: ARTErrorInfo?) {
         print("Ably Push Deactivation:", error ?? "no error")
+    }
+
+    func _ablyPushCustomRegister(_ error: ARTErrorInfo?, deviceDetails: ARTDeviceDetails, callback: @escaping (ARTDeviceIdentityTokenDetails?, ARTErrorInfo?) -> Void) {
+        if let e = error {
+            // Handle error.
+            callback(nil, e)
+            return
+        }
+
+        self.registerThroughYourServer(deviceDetails: deviceDetails, callback: callback)
+    }
+
+    func _ablyPushCustomDeregister(_ error: ARTErrorInfo?, deviceId: String, callback: ((ARTErrorInfo?) -> Void)? = nil) {
+        print(deviceId)
+    }
+
+    private func registerThroughYourServer(deviceDetails: ARTDeviceDetails, callback: @escaping (ARTDeviceIdentityTokenDetails?, ARTErrorInfo?) -> Void) {
+        DispatchQueue.global(qos: .background).async {
+            callback(nil, nil)
+        }
     }
 
     private func requestPushNotificationPermissions() {

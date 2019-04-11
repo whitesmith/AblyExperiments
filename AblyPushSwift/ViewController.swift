@@ -11,18 +11,34 @@ import Ably
 
 class ViewController: UIViewController {
 
-    var realtime: ARTRealtime!
+    let options = ARTClientOptions(key: AppDelegate.AblyKey)
 
+    var realtime: ARTRealtime!
+    var rest: ARTRest!
+
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let options = ARTClientOptions(key: "EyOMzQ._NdWJA:rb6YHb1h7YZuu45X")
+        if AppDelegate.AblySandbox {
+            options.environment = "sandbox"
+        }
         options.clientId = UIDevice.current.identifierForVendor!.uuidString
-        print("ClientId", options.clientId ?? "nil")
         realtime = ARTRealtime(options: options)
+        rest = ARTRest(options: options)
     }
 
-    @IBAction func buttonTapped(_ sender: Any) {
-        let message = ARTMessage(name: "simulator", data: "")
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        textView.text += "\n" + "AppID: " + (options.key?.prefix(6) ?? "no key")
+        textView.text += "\n" + "Env: " + (options.environment.isEmpty ? "production" : options.environment)
+        textView.text += "\n" + "ClientID: " + (options.clientId ?? "nil")
+        textView.text += "\n" + "DeviceID: " + rest.device.id
+        textView.text += "\n" + "DeviceToken: " + (UserDefaults.standard.string(forKey: "ARTDeviceToken") ?? "nil")
+    }
+
+    @IBAction func sendNotificationButtonTapped(_ sender: Any) {
+        let message = ARTMessage(name: "experiment", data: "")
         message.extras = [
             "push": [
                 "notification": [
@@ -35,10 +51,33 @@ class ViewController: UIViewController {
                 ]
             ]
         ] as NSDictionary
-        
-        realtime.channels.get("groups").publish([message]) { error in
-            print("Publish notification", error ?? "nil")
+
+        rest.channels.get("groups").publish([message]) { error in
+            print("Publish notification:", error ?? "nil")
+            DispatchQueue.main.async {
+                self.textView.text += "\n" + "Publish notification"
+            }
         }
     }
-    
+
+    @IBAction func subscribeClientButtonTapped(_ sender: Any) {
+        realtime.channels.get("groups").push.subscribeClient() { error in
+            let e: String = error?.debugDescription ?? "nil"
+            print("Subscribe Client:", error ?? "nil")
+            DispatchQueue.main.async {
+                self.textView.text += "\n" + "Subscribe Client: \(e)"
+            }
+        }
+    }
+
+    @IBAction func subscribeDeviceButtonTapped(_ sender: Any) {
+        realtime.channels.get("groups").push.subscribeDevice() { error in
+            let e: String = error?.debugDescription ?? "nil"
+            print("Subscribe Device:", error ?? "nil")
+            DispatchQueue.main.async {
+                self.textView.text += "\n" + "Subscribe Device: \(e)"
+            }
+        }
+    }
+
 }
