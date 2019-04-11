@@ -1,5 +1,5 @@
 PODS:
-  - Ably (1.1.2):
+  - Ably (1.1.3):
     - KSCrashAblyFork (= 1.15.18-ably-1)
     - MsgPackAblyFork (= 0.2.0-ably-1)
     - SAMKeychain (= 1.5.3)
@@ -74,28 +74,25 @@ PODS:
   - ULID (1.1.0)
 
 DEPENDENCIES:
-  - Ably (from `/Users/ricardopereira/Repositories/Whitesmith/ably-ios`)
+  - Ably
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Ably
     - KSCrashAblyFork
     - MsgPackAblyFork
     - SAMKeychain
     - SocketRocketAblyFork
     - ULID
 
-EXTERNAL SOURCES:
-  Ably:
-    :path: "/Users/ricardopereira/Repositories/Whitesmith/ably-ios"
-
 SPEC CHECKSUMS:
-  Ably: 7e563487efa765ad04717f4b02f660f20a147606
+  Ably: 44b4776f2afe08fda9563912b01a9e919e819150
   KSCrashAblyFork: eb1c0e9ba5bce1c6e0f30558c6d88590ad0c040e
   MsgPackAblyFork: 42dc34f3bd458b57de28341351e89f7c73393207
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SocketRocketAblyFork: 8337d4d53e49a8af8dbe76c8416ef55605f758c6
   ULID: b4714891a02819364faecd574a53e391c4c6de9d
 
-PODFILE CHECKSUM: 7e0adfbfdf2a95d4d6fe4c957d68f18c51b02fba
+PODFILE CHECKSUM: 01b41d2c07d407330a0f972ce5576886aeb0c29e
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

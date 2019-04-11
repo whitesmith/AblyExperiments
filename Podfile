@@ -6,6 +6,7 @@ target 'AblyPushSwift' do
   use_frameworks!
 
   # Pods for AblyPushSwift
-  pod 'Ably', :path => '/Users/ricardopereira/Repositories/Whitesmith/ably-ios'
-  #pod 'Ably', :git => 'https://github.com/ably/ably-ios.git', :branch => 'tv-support'
+  #pod 'Ably', :path => '/Users/ricardopereira/Repositories/Whitesmith/ably-ios'
+  #pod 'Ably', :git => 'https://github.com/ably/ably-ios.git', :branch => 'push'
+  pod 'Ably'
 end

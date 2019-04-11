@@ -180,7 +180,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AblyPushSwift/Pods-AblyPushSwift-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-AblyPushSwift/Pods-AblyPushSwift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Ably/Ably.framework",
 				"${BUILT_PRODUCTS_DIR}/KSCrashAblyFork/KSCrashAblyFork.framework",
 				"${BUILT_PRODUCTS_DIR}/MsgPackAblyFork/MsgPackAblyFork.framework",
@@ -201,7 +201,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AblyPushSwift/Pods-AblyPushSwift-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AblyPushSwift/Pods-AblyPushSwift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DCA44AFF666A17F92B2C87AB /* [CP] Check Pods Manifest.lock */ = {
