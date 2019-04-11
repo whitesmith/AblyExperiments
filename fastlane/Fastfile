@@ -1,0 +1,40 @@
+fastlane_version "2.50.0"
+REQUIRED_XCODE_VERSION = "10.1"
+default_platform :ios
+
+PROJECT_NAME = "AblyPushSwift"
+OUTPUT_DIR = "./build"
+
+PRODUCTION_SCHEME = "AblyPushSwift"
+PRODUCTION_IDENTIFIER = "co.whitesmith.AblyPush"
+PRODUCTION_IPA_PATH = "#{OUTPUT_DIR}/#{PRODUCTION_SCHEME}.ipa"
+PRODUCTION_DSYM_PATH = "#{OUTPUT_DIR}/#{PRODUCTION_SCHEME}.app.dSYM.zip"
+
+platform :ios do
+
+  lane :build_appstore do |options|
+    increment_build_number
+    gym(
+      scheme: PRODUCTION_SCHEME, 
+      export_method: "app-store", 
+      include_bitcode: true,
+      output_directory: OUTPUT_DIR,
+    )
+  end
+
+  lane :upload_latest_to_appstore do |options|
+    pilot(
+      username: "services@whitesmith.co",
+      team_name: "Whitesmith Lda",
+      ipa: PRODUCTION_IPA_PATH,
+      skip_submission: true,
+      skip_waiting_for_build_processing: true
+    )
+  end
+
+  lane :release do |options|
+    build_appstore
+    upload_latest_to_appstore
+  end
+
+end
