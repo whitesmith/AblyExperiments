@@ -32,6 +32,11 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         textView.text += "\n" + "AppID: " + (options.key?.prefix(6) ?? "no key")
         textView.text += "\n" + "Env: " + (options.environment.isEmpty ? "production" : options.environment)
+        #if DEBUG
+        textView.text += "\n" + "Mode: DEBUG"
+        #else
+        textView.text += "\n" + "Mode: RELEASE"
+        #endif
         textView.text += "\n" + "ClientID: " + (options.clientId ?? "nil")
         textView.text += "\n" + "DeviceID: " + rest.device.id
         textView.text += "\n" + "DeviceToken: " + (UserDefaults.standard.string(forKey: "ARTDeviceToken") ?? "nil")

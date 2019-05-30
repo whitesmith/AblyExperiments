@@ -16,7 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate
     var window: UIWindow?
     var realtime: ARTRealtime!
 
-    static let AblyKey = "<key>"
+    #if DEBUG
+    static let AblyKey = "<debug_key>"
+    #else
+    static let AblyKey = "<release_key>"
+    #endif
     static let AblySandbox = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
