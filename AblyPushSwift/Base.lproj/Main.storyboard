@@ -50,6 +50,38 @@
                                     <action selector="subscribeDeviceButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WBh-H7-Wye"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nc1-x8-BwJ">
+                                <rect key="frame" x="159" y="187" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Activate"/>
+                                <connections>
+                                    <action selector="activateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xAr-d8-spB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVj-Ij-t71">
+                                <rect key="frame" x="150" y="225" width="74" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Deactivate"/>
+                                <connections>
+                                    <action selector="deactivateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cbP-jp-L3m"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aje-ib-YpE">
+                                <rect key="frame" x="116" y="263" width="143" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Request Permissions"/>
+                                <connections>
+                                    <action selector="requestPermissionsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NEO-1b-Nwo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9d-ev-mLS">
+                                <rect key="frame" x="101" y="301" width="173" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Force update registration"/>
+                                <connections>
+                                    <action selector="updateRegistrationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M7l-Wr-ftM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

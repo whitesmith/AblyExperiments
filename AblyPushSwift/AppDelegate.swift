@@ -89,7 +89,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate
         }
     }
 
-    private func requestPushNotificationPermissions() {
+}
+
+extension AppDelegate {
+
+    fileprivate func requestPushNotificationPermissions() {
+        AppDelegate.requestPushNotificationPermissions()
+    }
+
+    class func requestPushNotificationPermissions() {
         let options: UNAuthorizationOptions = [.alert, .badge, .sound, .provisional]
         UNUserNotificationCenter.current().requestAuthorization(
             options: options,

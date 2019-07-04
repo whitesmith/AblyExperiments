@@ -17,14 +17,14 @@ class ViewController: UIViewController {
     var rest: ARTRest!
 
     @IBOutlet weak var textView: UITextView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         if AppDelegate.AblySandbox {
             options.environment = "sandbox"
         }
         options.clientId = UIDevice.current.identifierForVendor!.uuidString
-        realtime = ARTRealtime(options: options)
+        options.logLevel = .verbose
         rest = ARTRest(options: options)
     }
 
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func subscribeClientButtonTapped(_ sender: Any) {
-        realtime.channels.get("groups").push.subscribeClient() { error in
+        rest.channels.get("groups").push.subscribeClient() { error in
             let e: String = error?.debugDescription ?? "nil"
             print("Subscribe Client:", error ?? "nil")
             DispatchQueue.main.async {
@@ -76,13 +76,38 @@ class ViewController: UIViewController {
     }
 
     @IBAction func subscribeDeviceButtonTapped(_ sender: Any) {
-        realtime.channels.get("groups").push.subscribeDevice() { error in
+        rest.channels.get("groups").push.subscribeDevice() { error in
             let e: String = error?.debugDescription ?? "nil"
             print("Subscribe Device:", error ?? "nil")
             DispatchQueue.main.async {
                 self.textView.text += "\n" + "Subscribe Device: \(e)"
             }
         }
+    }
+
+    @IBAction func activateButtonTapped(_ sender: Any) {
+        logInfo("Push Activate called")
+        rest.push.activate()
+    }
+
+    @IBAction func deactivateButtonTapped(_ sender: Any) {
+        logInfo("Push Deactivate called")
+        rest.push.deactivate()
+    }
+
+    @IBAction func requestPermissionsButtonTapped(_ sender: Any) {
+        logInfo("Request permissions")
+        AppDelegate.requestPushNotificationPermissions()
+    }
+
+    @IBAction func updateRegistrationButtonTapped(_ sender: Any) {
+        logInfo("Force update device registration")
+        UIApplication.shared.unregisterForRemoteNotifications()
+    }
+
+    private func logInfo(_ info: String) {
+        print(info)
+        self.textView.text += "\n" + info
     }
 
 }
