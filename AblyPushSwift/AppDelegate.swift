@@ -23,8 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate
     #endif
     static let AblySandbox = false
 
+    private var lastDate: Date = Date()
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let options = ARTClientOptions(key: AppDelegate.AblyKey)
+        options.logLevel = .verbose
         options.clientId = UIDevice.current.identifierForVendor!.uuidString
         if AppDelegate.AblySandbox {
             options.environment = "sandbox"
@@ -32,10 +35,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate
 
         realtime = ARTRealtime(options: options)
 
+        realtime.connection.on { [weak self] stateChange in
+            guard let stateChange = stateChange else {
+                print("'stateChange' is nil")
+                return
+            }
+            let statusChange = ARTRealtimeConnectionStateToStr(stateChange.previous) + " -> " + ARTRealtimeConnectionStateToStr(stateChange.current)
+
+            let currentDate = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale.current
+            dateFormatter.calendar = Calendar.current
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+            print(dateFormatter.string(from: currentDate), currentDate.timeIntervalSince(self!.lastDate), statusChange)
+            self?.lastDate = currentDate
+        }
+
         UNUserNotificationCenter.current().delegate = self
 
         requestPushNotificationPermissions()
-
         realtime.push.activate()
 
         return true
