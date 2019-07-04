@@ -7,6 +7,6 @@ target 'AblyPushSwift' do
 
   # Pods for AblyPushSwift
   #pod 'Ably', :path => '/Users/ricardopereira/Repositories/Whitesmith/ably-ios'
-  #pod 'Ably', :git => 'https://github.com/ably/ably-ios.git', :branch => 'push'
+  #pod 'Ably', :git => 'https://github.com/ably/ably-ios.git', :branch => 'fix-push-auth-update-registration'
   pod 'Ably'
 end
