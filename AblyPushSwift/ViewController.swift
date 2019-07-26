@@ -26,6 +26,11 @@ class ViewController: UIViewController {
         options.clientId = UIDevice.current.identifierForVendor!.uuidString
         options.logLevel = .verbose
         rest = ARTRest(options: options)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleAblyPushDidActivate), name: .ablyPushDidActivate, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleAblyPushDidDeactivate), name: .ablyPushDidDeactivate, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleAblyPushDidReceivedNotification), name: .ablyPushDidReceivedNotification, object: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -40,6 +45,25 @@ class ViewController: UIViewController {
         textView.text += "\n" + "ClientID: " + (options.clientId ?? "nil")
         textView.text += "\n" + "DeviceID: " + rest.device.id
         textView.text += "\n" + "DeviceToken: " + (UserDefaults.standard.string(forKey: "ARTDeviceToken") ?? "nil")
+
+    @objc func handleAblyPushDidActivate(notification: Notification) {
+        if let error = notification.userInfo?["Error"] as? ARTErrorInfo {
+            logInfo(#function+":", error.debugDescription)
+            return
+        }
+        logInfo(#function+":", "no error")
+    }
+
+    @objc func handleAblyPushDidDeactivate(notification: Notification) {
+        if let error = notification.userInfo?["Error"] as? ARTErrorInfo {
+            logInfo(#function+":", error.debugDescription)
+            return
+        }
+        logInfo(#function+":", "no error")
+    }
+
+    @objc func handleAblyPushDidReceivedNotification(notification: Notification) {
+        logInfo(#function+":", notification.userInfo?.debugDescription ?? "no info")
     }
 
     @IBAction func sendNotificationButtonTapped(_ sender: Any) {

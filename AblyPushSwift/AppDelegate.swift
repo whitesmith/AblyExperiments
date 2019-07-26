@@ -10,6 +10,12 @@ import UIKit
 import Ably
 import UserNotifications
 
+extension Notification.Name {
+    static let ablyPushDidActivate = Notification.Name(rawValue: "ablyPushDidActivate")
+    static let ablyPushDidDeactivate = Notification.Name(rawValue: "ablyPushDidDeactivate")
+    static let ablyPushDidReceivedNotification = Notification.Name(rawValue: "ablyPushDidReceivedNotification")
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate {
 
@@ -69,6 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate
 
     func didActivateAblyPush(_ error: ARTErrorInfo?) {
         print("Ably Push Activation:", error ?? "no error")
+        NotificationCenter.default.post(name: .ablyPushDidActivate, object: nil, userInfo: ["Error": error!])
 
         if error == nil {
             // You can only use device after device activation has finished
@@ -85,6 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate
 
     func didDeactivateAblyPush(_ error: ARTErrorInfo?) {
         print("Ably Push Deactivation:", error ?? "no error")
+        NotificationCenter.default.post(name: .ablyPushDidDeactivate, object: nil, userInfo: ["Error": error!])
     }
 
     func _ablyPushCustomRegister(_ error: ARTErrorInfo?, deviceDetails: ARTDeviceDetails, callback: @escaping (ARTDeviceIdentityTokenDetails?, ARTErrorInfo?) -> Void) {
@@ -140,6 +148,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         // Show the notification alert (banner)
         completionHandler([.alert, .sound])
+
+        NotificationCenter.default.post(name: .ablyPushDidReceivedNotification, object: nil, userInfo: notification.request.content.userInfo)
     }
 
 }
