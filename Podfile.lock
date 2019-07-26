@@ -1,5 +1,5 @@
 PODS:
-  - Ably (1.1.8):
+  - Ably (1.1.9):
     - KSCrashAblyFork (= 1.15.20-ably-1)
     - MsgPackAblyFork (= 0.2.0-ably-1)
     - SAMKeychain (= 1.5.3)
@@ -86,7 +86,7 @@ SPEC REPOS:
     - ULID
 
 SPEC CHECKSUMS:
-  Ably: 0e09bd74d4faf89522e19996762119edea8a8a92
+  Ably: aa449fb64e1c189b48b3a41501a3dc5fd1df099e
   KSCrashAblyFork: e58ed6ba92e08e6a8a6ad601077495ef21a233b7
   MsgPackAblyFork: 42dc34f3bd458b57de28341351e89f7c73393207
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
@@ -95,4 +95,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 431cc09b1ef788fede14f6fb007a10625c37d368
 
-COCOAPODS: 1.7.3
+COCOAPODS: 1.7.5
