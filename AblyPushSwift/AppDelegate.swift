@@ -23,7 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate
     var realtime: ARTRealtime!
 
     #if DEBUG
-    static let AblyKey = "<debug_key>"
+        #if targetEnvironment(simulator)
+        static let AblyKey = "<debug_key>"
+        #else
+        static let AblyKey = "<debug_key_sub_only>" //subscribe only
+        #endif
     #else
     static let AblyKey = "<release_key>"
     #endif

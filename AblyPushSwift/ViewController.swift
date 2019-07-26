@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     let options = ARTClientOptions(key: AppDelegate.AblyKey)
 
     var realtime: ARTRealtime!
+    var fooChannel: ARTRealtimeChannel!
     var rest: ARTRest!
 
     @IBOutlet weak var textView: UITextView!
@@ -25,7 +26,12 @@ class ViewController: UIViewController {
         }
         options.clientId = UIDevice.current.identifierForVendor!.uuidString
         options.logLevel = .verbose
+
         rest = ARTRest(options: options)
+
+        realtime = ARTRealtime(options: options)
+        fooChannel = realtime.channels.get("foo")
+        fooChannel.attach()
 
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleAblyPushDidActivate), name: .ablyPushDidActivate, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleAblyPushDidDeactivate), name: .ablyPushDidDeactivate, object: nil)
@@ -35,16 +41,17 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        textView.text += "\n" + "AppID: " + (options.key?.prefix(6) ?? "no key")
-        textView.text += "\n" + "Env: " + (options.environment.isEmpty ? "production" : options.environment)
+        logInfo("AppID: " + String(options.key?.prefix(6) ?? "no key"))
+        logInfo("Env: " + (options.environment.isEmpty ? "production" : options.environment))
         #if DEBUG
-        textView.text += "\n" + "Mode: DEBUG"
+        logInfo("Mode: DEBUG")
         #else
-        textView.text += "\n" + "Mode: RELEASE"
+        logInfo("Mode: RELEASE")
         #endif
-        textView.text += "\n" + "ClientID: " + (options.clientId ?? "nil")
-        textView.text += "\n" + "DeviceID: " + rest.device.id
-        textView.text += "\n" + "DeviceToken: " + (UserDefaults.standard.string(forKey: "ARTDeviceToken") ?? "nil")
+        logInfo("ClientID: " + (options.clientId ?? "nil"))
+        logInfo("DeviceID: " + rest.device.id)
+        logInfo("DeviceToken: " + (UserDefaults.standard.string(forKey: "ARTDeviceToken") ?? "nil"))
+    }
 
     @objc func handleAblyPushDidActivate(notification: Notification) {
         if let error = notification.userInfo?["Error"] as? ARTErrorInfo {
@@ -67,28 +74,58 @@ class ViewController: UIViewController {
     }
 
     @IBAction func sendNotificationButtonTapped(_ sender: Any) {
+        let push: [String: Any] = [
+            "notification": [
+                "title": "Hello from Ably!",
+                "body": "Example push notification from Ably."
+            ],
+            "data": [
+                "foo": "bar",
+                "baz": "qux"
+            ]
+        ]
+
         let message = ARTMessage(name: "experiment", data: "")
         message.extras = [
-            "push": [
-                "notification": [
-                    "title": "Hello from Ably!",
-                    "body": "Example push notification from Ably."
-                ],
-                "data": [
-                    "foo": "bar",
-                    "baz": "qux"
-                ]
-            ]
+            "push": push
         ] as NSDictionary
 
         rest.channels.get("groups").publish([message]) { error in
-            print("Publish notification:", error ?? "nil")
-            DispatchQueue.main.async {
-                self.textView.text += "\n" + "Publish notification"
-            }
+            self.logInfo("Notification published:", error?.debugDescription ?? "nil")
         }
     }
 
+    @IBAction func sendNotificationWithAdminTapped(_ sender: Any) {
+        let push: [String: Any] = [
+            "notification": [
+                "title": "Hello from Ably!",
+                "body": "Example push notification from Ably."
+            ],
+            "data": [
+                "foo": "bar",
+                "baz": "qux"
+            ]
+        ]
+
+        let message = ARTMessage(name: "experiment", data: "")
+        message.extras = [
+            "push": push
+        ] as NSDictionary
+
+        /*
+         let recipient: [String: Any] = [
+         "clientId": "C03BC116-8004-4D78-A71F-8CA3122734DB"
+         ]
+         */
+        let recipient: [String: Any] = [
+            "deviceId": "0001EHSJBS00GW0X476W5TVBFE"
+        ]
+
+        rest.push.admin.publish(recipient, data: push) { error in
+            self.logInfo("Notification published:", error?.debugDescription ?? "nil")
+        }
+    }
+    
     @IBAction func subscribeClientButtonTapped(_ sender: Any) {
         rest.channels.get("groups").push.subscribeClient() { error in
             let e: String = error?.debugDescription ?? "nil"
@@ -129,9 +166,10 @@ class ViewController: UIViewController {
         UIApplication.shared.unregisterForRemoteNotifications()
     }
 
-    private func logInfo(_ info: String) {
-        print(info)
-        self.textView.text += "\n" + info
+    private func logInfo(_ info: String...) {
+        let message = info.joined(separator: " ")
+        print(message)
+        self.textView.text += "\n" + message
     }
 
 }

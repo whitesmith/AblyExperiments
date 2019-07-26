@@ -11,16 +11,10 @@
 
 @implementation AnotherViewController
 
-- (void)test {
-    ARTRealtime *realtime = [[ARTRealtime alloc] initWithKey:@"xxxx:xxxx"];
-}
-
 - (void)didActivateAblyPush:(ARTErrorInfo *)error {
-
 }
 
 - (void)didDeactivateAblyPush:(ARTErrorInfo *)error {
-
 }
 
 - (void)ablyPushCustomRegister:(ARTErrorInfo *)error deviceDetails:(ARTDeviceDetails *)deviceDetails callback:(void (^)(ARTDeviceIdentityTokenDetails * _Nullable, ARTErrorInfo * _Nullable))callback {
