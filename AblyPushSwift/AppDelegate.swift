@@ -79,7 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate
 
     func didActivateAblyPush(_ error: ARTErrorInfo?) {
         print("Ably Push Activation:", error ?? "no error")
-        NotificationCenter.default.post(name: .ablyPushDidActivate, object: nil, userInfo: ["Error": error!])
+        NotificationCenter.default.post(name: .ablyPushDidActivate, object: nil, userInfo: ["Error": error as Any])
 
         if error == nil {
             // You can only use device after device activation has finished
@@ -96,7 +96,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate
 
     func didDeactivateAblyPush(_ error: ARTErrorInfo?) {
         print("Ably Push Deactivation:", error ?? "no error")
-        NotificationCenter.default.post(name: .ablyPushDidDeactivate, object: nil, userInfo: ["Error": error!])
+        NotificationCenter.default.post(name: .ablyPushDidDeactivate, object: nil, userInfo: ["Error": error as Any])
     }
 
     func _ablyPushCustomRegister(_ error: ARTErrorInfo?, deviceDetails: ARTDeviceDetails, callback: @escaping (ARTDeviceIdentityTokenDetails?, ARTErrorInfo?) -> Void) {
