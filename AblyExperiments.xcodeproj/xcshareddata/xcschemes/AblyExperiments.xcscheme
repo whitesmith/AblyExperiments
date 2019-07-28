@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D717FAA72164CA70008E9A04"
-               BuildableName = "AblyPushSwift.app"
-               BlueprintName = "AblyPushSwift"
-               ReferencedContainer = "container:AblyPushSwift.xcodeproj">
+               BuildableName = "AblyExperiments.app"
+               BlueprintName = "AblyExperiments"
+               ReferencedContainer = "container:AblyExperiments.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D717FAA72164CA70008E9A04"
-            BuildableName = "AblyPushSwift.app"
-            BlueprintName = "AblyPushSwift"
-            ReferencedContainer = "container:AblyPushSwift.xcodeproj">
+            BuildableName = "AblyExperiments.app"
+            BlueprintName = "AblyExperiments"
+            ReferencedContainer = "container:AblyExperiments.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D717FAA72164CA70008E9A04"
-            BuildableName = "AblyPushSwift.app"
-            BlueprintName = "AblyPushSwift"
-            ReferencedContainer = "container:AblyPushSwift.xcodeproj">
+            BuildableName = "AblyExperiments.app"
+            BlueprintName = "AblyExperiments"
+            ReferencedContainer = "container:AblyExperiments.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D717FAA72164CA70008E9A04"
-            BuildableName = "AblyPushSwift.app"
-            BlueprintName = "AblyPushSwift"
-            ReferencedContainer = "container:AblyPushSwift.xcodeproj">
+            BuildableName = "AblyExperiments.app"
+            BlueprintName = "AblyExperiments"
+            ReferencedContainer = "container:AblyExperiments.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

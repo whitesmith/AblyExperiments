@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A43C18C2D042779AF9F5AA69 /* Pods_AblyPushSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84D9EEF7CF701FB1A0B237B /* Pods_AblyPushSwift.framework */; };
+		C69BC8763E811FE77F5E9829 /* Pods_AblyExperiments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A0BA9777D10441640C2BF3 /* Pods_AblyExperiments.framework */; };
 		D717FAAC2164CA70008E9A04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717FAAB2164CA70008E9A04 /* AppDelegate.swift */; };
 		D717FAAE2164CA70008E9A04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717FAAD2164CA70008E9A04 /* ViewController.swift */; };
 		D717FAB12164CA70008E9A04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D717FAAF2164CA70008E9A04 /* Main.storyboard */; };
@@ -17,20 +17,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15A0BA9777D10441640C2BF3 /* Pods_AblyExperiments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AblyExperiments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65FDBF0C381D0EF76BF1717B /* Pods-AblyExperiments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AblyExperiments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AblyExperiments/Pods-AblyExperiments.debug.xcconfig"; sourceTree = "<group>"; };
 		7DDEE65DA2F5F54BA7295567 /* Pods-AblyPushSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AblyPushSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-AblyPushSwift/Pods-AblyPushSwift.release.xcconfig"; sourceTree = "<group>"; };
-		D717FAA82164CA70008E9A04 /* AblyPushSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AblyPushSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D6B66335F9BD3E8BDDC968D /* Pods-AblyExperiments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AblyExperiments.release.xcconfig"; path = "Pods/Target Support Files/Pods-AblyExperiments/Pods-AblyExperiments.release.xcconfig"; sourceTree = "<group>"; };
+		D717FAA82164CA70008E9A04 /* AblyExperiments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AblyExperiments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D717FAAB2164CA70008E9A04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D717FAAD2164CA70008E9A04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D717FAB02164CA70008E9A04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D717FAB22164CA72008E9A04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D717FAB52164CA72008E9A04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D717FAB72164CA72008E9A04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D7187E1B21CD3239005927CC /* AblyPushSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AblyPushSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		D7187E1B21CD3239005927CC /* AblyExperiments-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AblyExperiments-Bridging-Header.h"; sourceTree = "<group>"; };
 		D7187E1C21CD323A005927CC /* AnotherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnotherViewController.h; sourceTree = "<group>"; };
 		D7187E1D21CD323A005927CC /* AnotherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnotherViewController.m; sourceTree = "<group>"; };
-		D7A0B7B021C2B274007253D9 /* AblyPushSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AblyPushSwift.entitlements; sourceTree = "<group>"; };
+		D7A0B7B021C2B274007253D9 /* Ably.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ably.entitlements; sourceTree = "<group>"; };
 		DBC2812849C841BE4708039A /* Pods-AblyPushSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AblyPushSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AblyPushSwift/Pods-AblyPushSwift.debug.xcconfig"; sourceTree = "<group>"; };
-		E84D9EEF7CF701FB1A0B237B /* Pods_AblyPushSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AblyPushSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A43C18C2D042779AF9F5AA69 /* Pods_AblyPushSwift.framework in Frameworks */,
+				C69BC8763E811FE77F5E9829 /* Pods_AblyExperiments.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,7 +50,7 @@
 		D717FA9F2164CA70008E9A04 = {
 			isa = PBXGroup;
 			children = (
-				D717FAAA2164CA70008E9A04 /* AblyPushSwift */,
+				D717FAAA2164CA70008E9A04 /* AblyExperiments */,
 				D717FAA92164CA70008E9A04 /* Products */,
 				DAC144A3A00FBB698A7F8419 /* Pods */,
 				D7ADA8C430947364E37B6889 /* Frameworks */,
@@ -58,15 +60,15 @@
 		D717FAA92164CA70008E9A04 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D717FAA82164CA70008E9A04 /* AblyPushSwift.app */,
+				D717FAA82164CA70008E9A04 /* AblyExperiments.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D717FAAA2164CA70008E9A04 /* AblyPushSwift */ = {
+		D717FAAA2164CA70008E9A04 /* AblyExperiments */ = {
 			isa = PBXGroup;
 			children = (
-				D7A0B7B021C2B274007253D9 /* AblyPushSwift.entitlements */,
+				D7A0B7B021C2B274007253D9 /* Ably.entitlements */,
 				D717FAAB2164CA70008E9A04 /* AppDelegate.swift */,
 				D717FAAD2164CA70008E9A04 /* ViewController.swift */,
 				D7187E1C21CD323A005927CC /* AnotherViewController.h */,
@@ -75,15 +77,15 @@
 				D717FAB22164CA72008E9A04 /* Assets.xcassets */,
 				D717FAB42164CA72008E9A04 /* LaunchScreen.storyboard */,
 				D717FAB72164CA72008E9A04 /* Info.plist */,
-				D7187E1B21CD3239005927CC /* AblyPushSwift-Bridging-Header.h */,
+				D7187E1B21CD3239005927CC /* AblyExperiments-Bridging-Header.h */,
 			);
-			path = AblyPushSwift;
+			path = AblyExperiments;
 			sourceTree = "<group>";
 		};
 		D7ADA8C430947364E37B6889 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E84D9EEF7CF701FB1A0B237B /* Pods_AblyPushSwift.framework */,
+				15A0BA9777D10441640C2BF3 /* Pods_AblyExperiments.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -93,6 +95,8 @@
 			children = (
 				DBC2812849C841BE4708039A /* Pods-AblyPushSwift.debug.xcconfig */,
 				7DDEE65DA2F5F54BA7295567 /* Pods-AblyPushSwift.release.xcconfig */,
+				65FDBF0C381D0EF76BF1717B /* Pods-AblyExperiments.debug.xcconfig */,
+				8D6B66335F9BD3E8BDDC968D /* Pods-AblyExperiments.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -100,9 +104,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D717FAA72164CA70008E9A04 /* AblyPushSwift */ = {
+		D717FAA72164CA70008E9A04 /* AblyExperiments */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D717FABA2164CA72008E9A04 /* Build configuration list for PBXNativeTarget "AblyPushSwift" */;
+			buildConfigurationList = D717FABA2164CA72008E9A04 /* Build configuration list for PBXNativeTarget "AblyExperiments" */;
 			buildPhases = (
 				DCA44AFF666A17F92B2C87AB /* [CP] Check Pods Manifest.lock */,
 				D717FAA42164CA70008E9A04 /* Sources */,
@@ -114,9 +118,9 @@
 			);
 			dependencies = (
 			);
-			name = AblyPushSwift;
+			name = AblyExperiments;
 			productName = AblyPushSwift;
-			productReference = D717FAA82164CA70008E9A04 /* AblyPushSwift.app */;
+			productReference = D717FAA82164CA70008E9A04 /* AblyExperiments.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -140,7 +144,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D717FAA32164CA70008E9A04 /* Build configuration list for PBXProject "AblyPushSwift" */;
+			buildConfigurationList = D717FAA32164CA70008E9A04 /* Build configuration list for PBXProject "AblyExperiments" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -153,7 +157,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D717FAA72164CA70008E9A04 /* AblyPushSwift */,
+				D717FAA72164CA70008E9A04 /* AblyExperiments */,
 			);
 		};
 /* End PBXProject section */
@@ -178,15 +182,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AblyPushSwift/Pods-AblyPushSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AblyExperiments/Pods-AblyExperiments-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AblyPushSwift/Pods-AblyPushSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AblyExperiments/Pods-AblyExperiments-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AblyPushSwift/Pods-AblyPushSwift-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AblyExperiments/Pods-AblyExperiments-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DCA44AFF666A17F92B2C87AB /* [CP] Check Pods Manifest.lock */ = {
@@ -204,7 +208,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AblyPushSwift-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AblyExperiments-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -368,21 +372,21 @@
 		};
 		D717FABB2164CA72008E9A04 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBC2812849C841BE4708039A /* Pods-AblyPushSwift.debug.xcconfig */;
+			baseConfigurationReference = 65FDBF0C381D0EF76BF1717B /* Pods-AblyExperiments.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = AblyPushSwift/AblyPushSwift.entitlements;
+				CODE_SIGN_ENTITLEMENTS = AblyExperiments/Ably.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2E58BZR8M3;
-				INFOPLIST_FILE = AblyPushSwift/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AblyExperiments/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.whitesmith.AblyPush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "AblyPushSwift/AblyPushSwift-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "AblyExperiments/AblyExperiments-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -391,21 +395,21 @@
 		};
 		D717FABC2164CA72008E9A04 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DDEE65DA2F5F54BA7295567 /* Pods-AblyPushSwift.release.xcconfig */;
+			baseConfigurationReference = 8D6B66335F9BD3E8BDDC968D /* Pods-AblyExperiments.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = AblyPushSwift/AblyPushSwift.entitlements;
+				CODE_SIGN_ENTITLEMENTS = AblyExperiments/Ably.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2E58BZR8M3;
-				INFOPLIST_FILE = AblyPushSwift/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AblyExperiments/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.whitesmith.AblyPush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "AblyPushSwift/AblyPushSwift-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "AblyExperiments/AblyExperiments-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -414,7 +418,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D717FAA32164CA70008E9A04 /* Build configuration list for PBXProject "AblyPushSwift" */ = {
+		D717FAA32164CA70008E9A04 /* Build configuration list for PBXProject "AblyExperiments" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D717FAB82164CA72008E9A04 /* Debug */,
@@ -423,7 +427,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D717FABA2164CA72008E9A04 /* Build configuration list for PBXNativeTarget "AblyPushSwift" */ = {
+		D717FABA2164CA72008E9A04 /* Build configuration list for PBXNativeTarget "AblyExperiments" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D717FABB2164CA72008E9A04 /* Debug */,
