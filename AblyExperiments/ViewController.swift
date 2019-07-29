@@ -21,11 +21,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        options.logLevel = .verbose
+        
         if AppDelegate.AblySandbox {
             options.environment = "sandbox"
         }
-        options.clientId = UIDevice.current.identifierForVendor!.uuidString
-        options.logLevel = .verbose
+        if !AppDelegate.AblyInitializeClientIdLater {
+            options.clientId = UIDevice.current.identifierForVendor!.uuidString
+        }
 
         rest = ARTRest(options: options)
 

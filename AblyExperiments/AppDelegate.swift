@@ -31,14 +31,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate
     #else
     static let AblyKey = "<release_key>"
     #endif
+
     static let AblySandbox = false
+    static let AblyInitializeClientIdLater = false
 
     private var lastDate: Date = Date()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let options = ARTClientOptions(key: AppDelegate.AblyKey)
         options.logLevel = .verbose
-        options.clientId = UIDevice.current.identifierForVendor!.uuidString
+
+        if !AppDelegate.AblyInitializeClientIdLater {
+            options.clientId = UIDevice.current.identifierForVendor!.uuidString
+        }
+        else {
+            options.authCallback = { _, completion in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                    let tokenDetails = ARTTokenDetails(
+                        token: "",
+                        expires: Date().addingTimeInterval(3600),
+                        issued: Date(),
+                        capability: "{\"[*]*\":[\"channel-metadata\",\"history\",\"presence\",\"publish\",\"push-subscribe\",\"subscribe\"]}",
+                        clientId: ""
+                    )
+                    completion(tokenDetails, nil)
+                })
+            }
+        }
+
         if AppDelegate.AblySandbox {
             options.environment = "sandbox"
         }
@@ -59,6 +79,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
             print(dateFormatter.string(from: currentDate), currentDate.timeIntervalSince(self!.lastDate), statusChange)
             self?.lastDate = currentDate
+
+            if stateChange.current == .connected, let tokenDetails = self?.realtime.auth.tokenDetails {
+                print("Current TokenDetails", tokenDetails)
+            }
         }
 
         UNUserNotificationCenter.current().delegate = self
