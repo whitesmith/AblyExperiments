@@ -23,10 +23,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         options.logLevel = .verbose
         
-        if AppDelegate.AblySandbox {
+        if AppDelegate.Options.useSandbox {
             options.environment = "sandbox"
         }
-        if !AppDelegate.AblyInitializeClientIdLater {
+        if !AppDelegate.Options.initializeClientIdAfterLaunching {
             options.clientId = UIDevice.current.identifierForVendor!.uuidString
         }
 
@@ -115,13 +115,9 @@ class ViewController: UIViewController {
             "push": push
         ] as NSDictionary
 
-        /*
-         let recipient: [String: Any] = [
-         "clientId": "C03BC116-8004-4D78-A71F-8CA3122734DB"
-         ]
-         */
         let recipient: [String: Any] = [
             "deviceId": "0001EHSJBS00GW0X476W5TVBFE"
+            //"clientId": "C03BC116-8004-4D78-A71F-8CA3122734DB"
         ]
 
         rest.push.admin.publish(recipient, data: push) { error in
@@ -133,6 +129,7 @@ class ViewController: UIViewController {
         rest.channels.get("groups").push.subscribeClient() { error in
             let e: String = error?.debugDescription ?? "nil"
             print("Subscribe Client:", error ?? "nil")
+            #warning("Remove dispatch call after fix is out")
             DispatchQueue.main.async {
                 self.textView.text += "\n" + "Subscribe Client: \(e)"
             }
@@ -143,6 +140,7 @@ class ViewController: UIViewController {
         rest.channels.get("groups").push.subscribeDevice() { error in
             let e: String = error?.debugDescription ?? "nil"
             print("Subscribe Device:", error ?? "nil")
+            #warning("Remove dispatch call after fix is out")
             DispatchQueue.main.async {
                 self.textView.text += "\n" + "Subscribe Device: \(e)"
             }
@@ -164,8 +162,13 @@ class ViewController: UIViewController {
         AppDelegate.requestPushNotificationPermissions()
     }
 
-    @IBAction func updateRegistrationButtonTapped(_ sender: Any) {
-        logInfo("Force update device registration")
+    @IBAction func registerRemoteNotificationsButtonTapped(_ sender: Any) {
+        logInfo("Register for Remote notifications")
+        UIApplication.shared.registerForRemoteNotifications()
+    }
+
+    @IBAction func unregisterRemoteNotificationsButtonTapped(_ sender: Any) {
+        logInfo("Unregister for Remote notifications")
         UIApplication.shared.unregisterForRemoteNotifications()
     }
 

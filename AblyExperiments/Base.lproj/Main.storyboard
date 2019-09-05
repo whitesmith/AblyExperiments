@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AblyPushSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AblyExperiments" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,20 +74,28 @@
                                     <action selector="requestPermissionsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NEO-1b-Nwo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9d-ev-mLS">
-                                <rect key="frame" x="101" y="352" width="173" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Force update registration"/>
-                                <connections>
-                                    <action selector="updateRegistrationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M7l-Wr-ftM"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7g-Q7-3mL">
                                 <rect key="frame" x="88" y="102" width="198" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Send Notification with Admin"/>
                                 <connections>
                                     <action selector="sendNotificationWithAdminTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qrZ-yz-jVL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZf-G1-Hwg">
+                                <rect key="frame" x="88" y="361" width="198" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Register remote notifications"/>
+                                <connections>
+                                    <action selector="registerRemoteNotificationsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7o6-VA-PYF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9d-ev-mLS">
+                                <rect key="frame" x="81" y="399" width="213" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Unregister remote notifications"/>
+                                <connections>
+                                    <action selector="unregisterRemoteNotificationsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M7l-Wr-ftM"/>
                                 </connections>
                             </button>
                         </subviews>

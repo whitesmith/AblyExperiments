@@ -19,6 +19,12 @@ extension Notification.Name {
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate {
 
+    final class Options {
+        static let useSandbox = false
+        static let initializeClientIdAfterLaunching = false
+        static let requestPermissionsAfterLaunching = false
+    }
+
     var window: UIWindow?
     var realtime: ARTRealtime!
 
@@ -32,16 +38,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate
     static let AblyKey = "<release_key>"
     #endif
 
-    static let AblySandbox = false
-    static let AblyInitializeClientIdLater = false
-
     private var lastDate: Date = Date()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let options = ARTClientOptions(key: AppDelegate.AblyKey)
         options.logLevel = .verbose
 
-        if !AppDelegate.AblyInitializeClientIdLater {
+        if !Options.initializeClientIdAfterLaunching {
             options.clientId = UIDevice.current.identifierForVendor!.uuidString
         }
         else {
@@ -59,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate
             }
         }
 
-        if AppDelegate.AblySandbox {
+        if Options.useSandbox {
             options.environment = "sandbox"
         }
 
@@ -87,7 +90,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate
 
         UNUserNotificationCenter.current().delegate = self
 
-        requestPushNotificationPermissions()
+        if Options.requestPermissionsAfterLaunching {
+            requestPushNotificationPermissions()
+        }
+
         realtime.push.activate()
 
         return true
@@ -104,18 +110,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate
     func didActivateAblyPush(_ error: ARTErrorInfo?) {
         print("Ably Push Activation:", error ?? "no error")
         NotificationCenter.default.post(name: .ablyPushDidActivate, object: nil, userInfo: ["Error": error as Any])
-
-        if error == nil {
-            // You can only use device after device activation has finished
-            //realtime.channels.get("groups").push.subscribeDevice() { error in
-            //    print("SubscribeDevice", error ?? "nil")
-            //}
-
-            // You can only use device after device activation has finished
-            //realtime.channels.get("groups").push.subscribeClient() { error in
-            //    print("Activated SubscribeClient", error ?? "nil")
-            //}
-        }
     }
 
     func didDeactivateAblyPush(_ error: ARTErrorInfo?) {
@@ -156,6 +150,7 @@ extension AppDelegate {
         UNUserNotificationCenter.current().requestAuthorization(
             options: options,
             completionHandler: { granted, error in
+                // This is not mandatory
                 DispatchQueue.main.async {
                     UIApplication.shared.registerForRemoteNotifications()
                 }
