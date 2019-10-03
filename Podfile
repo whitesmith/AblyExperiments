@@ -5,5 +5,5 @@ target 'AblyExperiments' do
 
   #pod 'Ably', :path => '/Users/ricardopereira/Repositories/Whitesmith/ably-cocoa'
   #pod 'Ably', :git => 'https://github.com/ably/ably-cocoa.git', :branch => ''
-  pod 'Ably'
+  pod 'Ably', '1.1.11-beta.1'
 end
