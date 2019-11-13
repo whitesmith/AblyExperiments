@@ -137,6 +137,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ARTPushRegistererDelegate
         }
     }
 
+    // MARK: - Remote Notifications
+
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+        guard let userInfo = userInfo as? [String: AnyObject] else {
+            return
+        }
+        print("Remote Notification:", userInfo)
+    }
+
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        if (userInfo["aps"] as? [String: Any])?["alert"] != nil {
+            print("Remote Notification with completion handler:", userInfo)
+            completionHandler(.noData)
+            return
+        }
+        print("Background Notification:", userInfo)
+        completionHandler(.noData)
+    }
+
 }
 
 extension AppDelegate {
@@ -165,13 +184,14 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         // Tell the app that we have finished processing the user’s action (eg: tap on notification banner) / response
         // Handle received remoteNotification: 'response.notification.request.content.userInfo'
+        print("UNUserNotificationCenterDelegate: did receive notification")
         completionHandler()
     }
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         // Show the notification alert (banner)
         completionHandler([.alert, .sound])
-
+        print("UNUserNotificationCenterDelegate: will present notification")
         NotificationCenter.default.post(name: .ablyPushDidReceivedNotification, object: nil, userInfo: notification.request.content.userInfo)
     }
 

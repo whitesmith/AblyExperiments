@@ -100,13 +100,17 @@ class ViewController: UIViewController {
 
     @IBAction func sendNotificationWithAdminTapped(_ sender: Any) {
         let push: [String: Any] = [
-            "notification": [
-                "title": "Hello from Ably!",
-                "body": "Example push notification from Ably."
+            "apns": [
+                "aps": [
+                    "content-available": 1
+                ],
+                "apns-headers": [
+                    "apns-push-type": "background",
+                    "apns-priority": 5
+                ]
             ],
             "data": [
-                "foo": "bar",
-                "baz": "qux"
+                "proto-data": "Hello from Ably!"
             ]
         ]
 
