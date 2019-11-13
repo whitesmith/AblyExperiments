@@ -133,10 +133,7 @@ class ViewController: UIViewController {
         rest.channels.get("groups").push.subscribeClient() { error in
             let e: String = error?.debugDescription ?? "nil"
             print("Subscribe Client:", error ?? "nil")
-            #warning("Remove dispatch call after fix is out")
-            DispatchQueue.main.async {
-                self.textView.text += "\n" + "Subscribe Client: \(e)"
-            }
+            self.textView.text += "\n" + "Subscribe Client: \(e)"
         }
     }
 
@@ -144,10 +141,7 @@ class ViewController: UIViewController {
         rest.channels.get("groups").push.subscribeDevice() { error in
             let e: String = error?.debugDescription ?? "nil"
             print("Subscribe Device:", error ?? "nil")
-            #warning("Remove dispatch call after fix is out")
-            DispatchQueue.main.async {
-                self.textView.text += "\n" + "Subscribe Device: \(e)"
-            }
+            self.textView.text += "\n" + "Subscribe Device: \(e)"
         }
     }
 
