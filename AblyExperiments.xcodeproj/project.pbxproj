@@ -19,7 +19,6 @@
 /* Begin PBXFileReference section */
 		15A0BA9777D10441640C2BF3 /* Pods_AblyExperiments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AblyExperiments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65FDBF0C381D0EF76BF1717B /* Pods-AblyExperiments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AblyExperiments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AblyExperiments/Pods-AblyExperiments.debug.xcconfig"; sourceTree = "<group>"; };
-		7DDEE65DA2F5F54BA7295567 /* Pods-AblyPushSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AblyPushSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-AblyPushSwift/Pods-AblyPushSwift.release.xcconfig"; sourceTree = "<group>"; };
 		8D6B66335F9BD3E8BDDC968D /* Pods-AblyExperiments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AblyExperiments.release.xcconfig"; path = "Pods/Target Support Files/Pods-AblyExperiments/Pods-AblyExperiments.release.xcconfig"; sourceTree = "<group>"; };
 		D717FAA82164CA70008E9A04 /* AblyExperiments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AblyExperiments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D717FAAB2164CA70008E9A04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,7 +31,6 @@
 		D7187E1C21CD323A005927CC /* AnotherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnotherViewController.h; sourceTree = "<group>"; };
 		D7187E1D21CD323A005927CC /* AnotherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnotherViewController.m; sourceTree = "<group>"; };
 		D7A0B7B021C2B274007253D9 /* Ably.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ably.entitlements; sourceTree = "<group>"; };
-		DBC2812849C841BE4708039A /* Pods-AblyPushSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AblyPushSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AblyPushSwift/Pods-AblyPushSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +91,6 @@
 		DAC144A3A00FBB698A7F8419 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DBC2812849C841BE4708039A /* Pods-AblyPushSwift.debug.xcconfig */,
-				7DDEE65DA2F5F54BA7295567 /* Pods-AblyPushSwift.release.xcconfig */,
 				65FDBF0C381D0EF76BF1717B /* Pods-AblyExperiments.debug.xcconfig */,
 				8D6B66335F9BD3E8BDDC968D /* Pods-AblyExperiments.release.xcconfig */,
 			);
