@@ -1,10 +1,12 @@
 PODS:
-  - Ably (1.1.23):
+  - Ably (1.2.1):
+    - AblyDeltaCodec (= 1.2.0)
     - KSCrashAblyFork (= 1.15.20-ably-6)
     - msgpack (= 0.3.1)
     - SAMKeychain (= 1.5.3)
     - SocketRocketAblyFork (= 0.5.2-ably-7)
     - ULID (= 1.1.0)
+  - AblyDeltaCodec (1.2.0)
   - KSCrashAblyFork (1.15.20-ably-6):
     - KSCrashAblyFork/Installations (= 1.15.20-ably-6)
   - KSCrashAblyFork/Installations (1.15.20-ably-6):
@@ -74,11 +76,12 @@ PODS:
   - ULID (1.1.0)
 
 DEPENDENCIES:
-  - Ably (= 1.1.23)
+  - Ably
 
 SPEC REPOS:
   trunk:
     - Ably
+    - AblyDeltaCodec
     - KSCrashAblyFork
     - msgpack
     - SAMKeychain
@@ -86,13 +89,14 @@ SPEC REPOS:
     - ULID
 
 SPEC CHECKSUMS:
-  Ably: 6fca6cd8d6688ce4d646e66e96ffe50179df4388
+  Ably: fa410eadcf588f3f108ca206025d41e4057f26ff
+  AblyDeltaCodec: 6123f31df5b04a0f5452968505a46ba16a9eb689
   KSCrashAblyFork: aeded013077defcc1422e803e32a40c3411548e7
   msgpack: a14de9216d29cfd0a7aff5af5150601a27e899a4
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SocketRocketAblyFork: 33ff506ecb565498051b8f358d60ae44274c3981
   ULID: b4714891a02819364faecd574a53e391c4c6de9d
 
-PODFILE CHECKSUM: 44dcc6bd4c808038d831f6631bed511e27317ea6
+PODFILE CHECKSUM: b44c04b0263f7d9b4d5a8b36e84391b36ba9558b
 
 COCOAPODS: 1.9.3
