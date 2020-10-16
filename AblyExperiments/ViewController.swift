@@ -21,7 +21,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        options.logLevel = .verbose
+        //options.logLevel = .verbose
         
         if AppDelegate.Options.useSandbox {
             options.environment = "sandbox"
@@ -44,8 +44,8 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        logInfo("AppID: " + String(options.key?.prefix(6) ?? "no key"))
-        logInfo("Env: " + (options.environment.isEmpty ? "production" : options.environment))
+        logInfo("Ably AppID: " + String(options.key?.prefix(6) ?? "no key"))
+        logInfo("Ably Env: " + (options.environment.isEmpty ? "production" : options.environment))
         #if DEBUG
         logInfo("Mode: DEBUG")
         #else
@@ -99,7 +99,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func sendNotificationWithAdminTapped(_ sender: Any) {
-        let push: [String: Any] = [
+        let backgroundNotification: [String: Any] = [
             "apns": [
                 "aps": [
                     "content-available": 1
@@ -113,6 +113,16 @@ class ViewController: UIViewController {
                 "proto-data": "Hello from Ably!"
             ]
         ]
+        let push: [String: Any] = [
+            "notification": [
+                "title": "Hello from Ably!",
+                "body": "Example push notification using Admin API."
+            ],
+            "data": [
+                "foo": "bar",
+                "baz": "qux"
+            ]
+        ]
 
         let message = ARTMessage(name: "experiment", data: "")
         message.extras = [
@@ -120,7 +130,7 @@ class ViewController: UIViewController {
         ] as NSDictionary
 
         let recipient: [String: Any] = [
-            "deviceId": "0001EHSJBS00GW0X476W5TVBFE"
+            "deviceId": "0001FR100100GW0X476W5TVBFE"
             //"clientId": "C03BC116-8004-4D78-A71F-8CA3122734DB"
         ]
 
