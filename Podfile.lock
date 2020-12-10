@@ -1,5 +1,5 @@
 PODS:
-  - Ably (1.2.2):
+  - Ably (1.2.3):
     - AblyDeltaCodec (= 1.2.0)
     - msgpack (= 0.3.1)
     - SocketRocketAblyFork (= 0.5.2-ably-7)
@@ -21,7 +21,7 @@ SPEC REPOS:
     - ULID
 
 SPEC CHECKSUMS:
-  Ably: 2d8e5bef19577ceb81ac427888e90d0f30bce217
+  Ably: 9f143677993cb6df20fce4551b9b6b2e55ad2f4d
   AblyDeltaCodec: 6123f31df5b04a0f5452968505a46ba16a9eb689
   msgpack: a14de9216d29cfd0a7aff5af5150601a27e899a4
   SocketRocketAblyFork: 33ff506ecb565498051b8f358d60ae44274c3981
@@ -29,4 +29,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: b44c04b0263f7d9b4d5a8b36e84391b36ba9558b
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0
